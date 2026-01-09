@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Finance Tracker | Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">💰 Finance Tracker</div>
+    <div class="nav-right">
+        <span id="userEmail">Welcome</span>
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+
+    </div>
+</nav>
+
+<div class="container">
+
+    <!-- SUMMARY -->
+    <section class="summary">
+        <div class="card income">
+            <h3>Total Income</h3>
+            <p id="totalIncome">₹ 0.00</p>
+        </div>
+
+        <div class="card expense">
+            <h3>Total Expense</h3>
+            <p id="totalExpenses">₹ 0.00</p>
+        </div>
+
+        <div class="card balance">
+            <h3>Net P&amp;L</h3>
+            <p id="balance">₹ 0.00</p>
+        </div>
+    </section>
+
+    <!-- TABS -->
+    <div class="tabs">
+        <button class="tab active" data-tab="incomeSection">Income</button>
+        <button class="tab" data-tab="expenseSection">Expense</button>
+    </div>
+    <!-- FILTER BAR -->
+    <div class="filter-bar">
+        <select id="typeFilter">
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+        </select>
+
+        <select id="categorySourceFilter">
+            <option value="">All</option>
+        </select>
+
+        <select id="sortBy">
+            <option value="">Sort By</option>
+            <option value="amountAsc">Amount ↑</option>
+            <option value="amountDesc">Amount ↓</option>
+        </select>
+
+        <input type="date" id="fromDate">
+        <input type="date" id="toDate">
+
+        <button onclick="applyFilters()" class="primary-btn">Apply</button>
+    </div>
+
+
+    <!-- INCOME -->
+    <section id="incomeSection" class="section active">
+        <div class="section-header">
+            <h2>Income</h2>
+            <button class="primary-btn">+ Add Income</button>
+        </div>
+        <div class="list-header">
+            <span class="cell date">Date</span>
+            <span class="cell desc">Description</span>
+            <span class="cell tag">Source</span>
+            <span class="cell amount">Amount</span>
+            <span class="cell"></span>
+        </div>
+        <div id="incomeList" class="empty">No income added yet.</div>
+    </section>
+
+    <!-- EXPENSE -->
+    <section id="expenseSection" class="section">
+        <div class="section-header">
+            <h2>Expenses</h2>
+            <button class="primary-btn">+ Add Expense</button>
+        </div>
+        <div class="list-header">
+            <span class="cell date">Date</span>
+            <span class="cell desc">Description</span>
+            <span class="cell tag">Category</span>
+            <span class="cell amount">Amount</span>
+            <span class="cell"></span>
+        </div>
+        <div id="expenseList" class="empty">No expenses added yet.</div>
+    </section>
+
+</div><!-- ADD INCOME MODAL -->
+<div id="incomeModal" class="modal hidden">
+    <div class="modal-content">
+        <h3>Add Income</h3>
+
+        <input id="incomeDesc" placeholder="Description">
+        <select id="incomeSource">
+            <option value="SALARY">Salary</option>
+            <option value="INVESTMENT">Investment</option>
+            <option value="TRADING">Trading</option>
+        </select>
+        <input id="incomeAmount" type="number" placeholder="Amount">
+        <input id="incomeDate" type="date">
+
+        <div class="modal-actions">
+            <button onclick="saveIncome()" class="primary-btn">Save</button>
+            <button onclick="closeIncomeModal()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<!-- ADD EXPENSE MODAL -->
+<div id="expenseModal" class="modal hidden">
+    <div class="modal-content">
+        <h3>Add Expense</h3>
+
+        <input id="expenseDesc" placeholder="Description">
+        <select id="expenseCategory">
+            <option value="PERSONAL">Personal</option>
+            <option value="SURVIVAL">Survival</option>
+            <option value="INVESTMENT">Investment</option>
+        </select>
+        <input id="expenseAmount" type="number" placeholder="Amount">
+        <input id="expenseDate" type="date">
+
+        <div class="modal-actions">
+            <button onclick="saveExpense()" class="primary-btn">Save</button>
+            <button onclick="closeExpenseModal()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+
+<script src="dashboard.js"></script>
+</body>
+</html>

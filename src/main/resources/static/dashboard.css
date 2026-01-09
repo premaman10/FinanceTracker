@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #050711;
+    color: #e5e7eb;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #020617;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 18px rgba(0,0,0,0.6);
+    border-bottom: 1px solid rgba(148,163,184,0.25);
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 600;
+    color: #e5e7eb;
+}
+
+.logout-btn {
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px 40px;
+}
+
+/* SUMMARY */
+.summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: radial-gradient(circle at top left, #0f172a, #020617 60%);
+    padding: 20px 22px;
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(15,23,42,0.9);
+    border: 1px solid rgba(148,163,184,0.3);
+}
+
+.card h3 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #9ca3af;
+    margin-bottom: 12px;
+}
+
+.card p {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.income p { color: #22c55e; }
+.expense p { color: #f97316; }
+
+/* Net P&L state */
+.balance.profit p {
+    color: #22c55e;
+}
+.balance.loss p {
+    color: #ef4444;
+}
+
+/* TABS */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(148,163,184,0.4);
+    cursor: pointer;
+    background: transparent;
+    color: #e5e7eb;
+    font-size: 13px;
+}
+
+.tab.active {
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    border-color: transparent;
+}
+
+/* SECTION */
+.section {
+    display: none;
+    background: #020617;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 18px 40px rgba(15,23,42,0.9);
+    border: 1px solid rgba(148,163,184,0.35);
+}
+
+.section.active {
+    display: block;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.section-header h2 {
+    font-size: 18px;
+}
+
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.filter-bar select,
+.filter-bar input {
+    padding: 8px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(148,163,184,0.45);
+    background: #020617;
+    color: #e5e7eb;
+    font-size: 13px;
+}
+
+.filter-bar select:focus,
+.filter-bar input:focus {
+    outline: none;
+    border-color: #4f46e5;
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+/* LIST ROWS */
+.list-row {
+    display: grid;
+    grid-template-columns: 130px 1fr 120px 130px 40px;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(30,41,59,0.9);
+    font-size: 13px;
+}
+
+.list-row:last-child {
+    border-bottom: none;
+}
+
+.list-header {
+    display: grid;
+    grid-template-columns: 130px 1fr 120px 130px 40px;
+    gap: 8px;
+    padding: 4px 0 6px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #6b7280;
+    border-bottom: 1px solid rgba(30,41,59,0.9);
+}
+
+.cell.date {
+    color: #9ca3af;
+}
+
+.cell.desc {
+    font-weight: 500;
+}
+
+.cell.tag {
+    justify-self: flex-start;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+}
+
+.income-tag {
+    background: rgba(34,197,94,0.15);
+    color: #4ade80;
+}
+
+.expense-tag {
+    background: rgba(248,113,113,0.12);
+    color: #fb7185;
+}
+
+.cell.amount {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+.income-amount {
+    color: #4ade80;
+}
+
+.expense-amount {
+    color: #fb7185;
+}
+
+.delete-btn {
+    background: transparent;
+    border: none;
+    color: #6b7280;
+    cursor: pointer;
+}
+
+/* MODAL */
+.modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15,23,42,0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: #020617;
+    padding: 22px;
+    border-radius: 14px;
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 18px 45px rgba(15,23,42,0.9);
+    border: 1px solid rgba(148,163,184,0.45);
+}
+
+.modal-content h3 {
+    margin-bottom: 4px;
+}
+
+.modal-content input,
+.modal-content select {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(148,163,184,0.45);
+    background: #020617;
+    color: #e5e7eb;
+    font-size: 13px;
+}
+
+.modal-content input:focus,
+.modal-content select:focus {
+    outline: none;
+    border-color: #4f46e5;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.hidden {
+    display: none;
+}
+
+.empty {
+    text-align: center;
+    padding: 30px;
+    color: #9ca3af;
+    font-size: 13px;
+}
