@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: finance-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: finance-backend
+  template:
+    metadata:
+      labels:
+        app: finance-backend
+    spec:
+      containers:
+        - name: backend
+          image: financetracker:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:mysql://mysql:3306/financetracker
+            - name: SPRING_DATASOURCE_USERNAME
+              value: root
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: root

@@ -1,0 +1,129 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* BODY */
+body {
+    background: #050711;
+    color: #e5e7eb;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* AUTH CONTAINER */
+.auth-container {
+    background: radial-gradient(circle at top left, #0f172a, #020617 65%);
+    width: 360px;
+    padding: 28px;
+    border-radius: 18px;
+    box-shadow: 0 18px 45px rgba(15,23,42,0.9);
+    border: 1px solid rgba(148,163,184,0.35);
+    text-align: center;
+}
+
+/* TITLE */
+.auth-container h1 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* TABS */
+.auth-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.tab {
+    flex: 1;
+    padding: 8px 0;
+    border-radius: 999px;
+    border: 1px solid rgba(148,163,184,0.45);
+    background: transparent;
+    color: #e5e7eb;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.tab.active {
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    border-color: transparent;
+}
+
+/* FORM */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.auth-form input {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(148,163,184,0.45);
+    background: #020617;
+    color: #e5e7eb;
+    font-size: 14px;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: #4f46e5;
+}
+
+/* PRIMARY BUTTON */
+.btn-primary {
+    margin-top: 6px;
+    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-primary:hover {
+    opacity: 0.95;
+}
+
+/* DIVIDER */
+.divider {
+    margin: 14px 0;
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* GOOGLE BUTTON */
+.google-btn {
+    display: block;
+    background: #dc2626;
+    color: white;
+    padding: 10px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.google-btn:hover {
+    background: #b91c1c;
+}
+
+/* MESSAGE */
+.message {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #ef4444;
+}
+
+/* HIDDEN */
+.hidden {
+    display: none;
+}
